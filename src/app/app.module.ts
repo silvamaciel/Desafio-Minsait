@@ -16,9 +16,9 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
     CadastrarComponent,
     EditarComponent,
+    HomeComponent,
     ProdutosComponent
   ],
   imports: [

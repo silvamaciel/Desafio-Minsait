@@ -1,0 +1,22 @@
+{
+    "produto": [
+        {
+            "id": 1,
+            "nome": "Geladeira",
+            "codigoDeBarras": "123456789012",
+            "preco": 2000.00
+        },
+        {
+            "id": 2,
+            "nome": "televisão",
+            "codigoDeBarras": "987654321098",
+            "preco": 1475.99
+        },
+        {
+            "id": 3,
+            "nome": "microondas",
+            "codigoDeBarras": "567890123456",
+            "preco": 357.75
+        }
+    ]
+}
