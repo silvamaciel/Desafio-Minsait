@@ -1,24 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProdutosComponent } from './components/produtos/produtos.component';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { EditarComponent } from './components/editar/editar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProdutosComponent,
-    CadastroComponent,
-    EditarComponent
+    HeaderComponent,
+    HomeComponent,
+    CadastrarComponent,
+    EditarComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
