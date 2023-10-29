@@ -16,8 +16,8 @@ export class ProdutosService {
     return this.http.get<IProduto[]>(this.api);
   }
 
-  cadastrar(produto: IProduto) {
-    return this.http.post<IProduto>(this.api, produto);
+  cadastrar(produto: Partial<IProduto>) {
+    return this.http.post(this.api, produto);
   }
-
+  
 }

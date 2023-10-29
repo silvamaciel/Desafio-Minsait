@@ -1,1 +1,30 @@
-<p>cadastrar works!</p>
+<h1 class="my-3">Cadastro</h1>
+
+<form [formGroup]="cadastroForm" (submit)="enviar()">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome do Produto</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="codigoDeBarras" class="form-label">Código de Barras</label>
+                    <input type="text" class="form-control" id="codigoDeBarras" formControlName="codigoDeBarras" maxlength="13">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="preco" class="form-label">R$ Valor</label>
+                    <input type="number" class="form-control" id="preco" step="0.01" formControlName="preco">
+                </div>
+            </div>
+            
+        </div>
+        <a class="btn btn-secondary me-1" routerLink="/Cadastro">Voltar</a>
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </div>
+    
+</form>
