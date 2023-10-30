@@ -23,4 +23,7 @@ export class ProdutosService {
     return this.http.post(this.api, produto);
   }
   
+  excluir(id?: number) {
+    return this.http.delete<IProduto>(`${this.api}/${id}`);
+  }
 }
