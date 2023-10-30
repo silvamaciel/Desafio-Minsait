@@ -6,6 +6,9 @@ import { IProduto } from '../interface/produto';
   providedIn: 'root'
 })
 export class ProdutosService {
+  remover(id: number) {
+    throw new Error('Method not implemented.');
+  }
 
   // Link da API que será consumida
   api = 'http://localhost:3000/produto';

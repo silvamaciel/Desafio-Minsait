@@ -20,5 +20,4 @@ export class ProdutosComponent {
       console.log(error);
     });
   }
-  
 }

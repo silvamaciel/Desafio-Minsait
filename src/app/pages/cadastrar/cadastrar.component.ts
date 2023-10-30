@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduto } from 'src/app/interface/produto';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -26,7 +27,14 @@ export class CadastrarComponent {
       alert('Preencha todos os campos!');
       return;
     }else{
-      this.ProdutosService.cadastrar(produto).subscribe(result => {
+      this.ProdutosService.cadastrar(produto).subscribe((result) => {
+        Swal.fire(
+          'Cadastro Realizado com Sucesso!',
+          '',
+          'success');
+      }, (error) => {
+        const {message} = error;
+        Swal.fire('Erro!', message, 'error');
       });
     }
   }

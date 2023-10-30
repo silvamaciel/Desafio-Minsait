@@ -1,22 +1,33 @@
 <div>
-<h1 class="ms-3">Produtos</h1>
+    <h1 class="ms-3">Produtos</h1>
 
-<table class="table mes-1 ">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cód. Barras</th>
-            <th scope="col">Preço</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let produto of produtos">
-            <td scope="row">{{produto.id}}</td>
-            <td scope="row">{{produto.nome}}</td>
-            <td scope="row">{{produto.codigoDeBarras}}</td>
-            <td scope="row">{{produto.preco}}</td>
-        </tr>
-    </tbody>
-</table>
-<button type="button" class="btn btn-primary" routerLink="/produtos/cadastro">Cadastrar</button>
+    <table class="table mes-1">
+        <thead>
+            <tr class="table-light">
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cód. Barras</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produto of produtos">
+                <td scope="row">{{produto.id}}</td>
+                <td scope="row">{{produto.nome}}</td>
+                <td scope="row">{{produto.codigoDeBarras}}</td>
+                <td scope="row">{{produto.preco}}</td>
+                <td scope="row" class="d-block p-2">
+                    <button type="button" class="btn btn-warning me-1 py-0 ">
+                        <i class="bi bi-pencil-square py-0" name="editar">Editar</i>
+                    </button>
+                    <button type="button" class="btn btn-danger me-1 py-0" name="deletar">
+                        <i class="bi bi-file-earmark-x py-0">Excluir</i>
+                    </button>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" routerLink="/produtos/cadastro">Cadastrar</button>

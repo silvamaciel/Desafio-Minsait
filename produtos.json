@@ -1,40 +1,58 @@
 {
-    "produto": [
-        {
-            "id": 1,
-            "nome": "Geladeira",
-            "codigoDeBarras": "123456789012",
-            "preco": 2000
-        },
-        {
-            "id": 2,
-            "nome": "televisão",
-            "codigoDeBarras": "987654321098",
-            "preco": 1475.99
-        },
-        {
-            "id": 3,
-            "nome": "microondas",
-            "codigoDeBarras": "567890123456",
-            "preco": 357.75
-        },
-        {
-            "nome": "Maciel Junio Leite da Silva",
-            "codigoDeBarras": "1234567891234",
-            "preco": 1250,
-            "id": 4
-        },
-        {
-            "nome": "Maciel Junio Leite da Silva",
-            "codigoDeBarras": "1234567891234",
-            "preco": 1250,
-            "id": 5
-        },
-        {
-            "nome": "Fogão",
-            "codigoDeBarras": "1111111111111",
-            "preco": 12673.5,
-            "id": 6
-        }
-    ]
+  "produto": [
+    {
+      "id": 1,
+      "nome": "Geladeira",
+      "codigoDeBarras": "123456789012",
+      "preco": 2000
+    },
+    {
+      "id": 2,
+      "nome": "televisão",
+      "codigoDeBarras": "987654321098",
+      "preco": 1475.99
+    },
+    {
+      "id": 3,
+      "nome": "microondas",
+      "codigoDeBarras": "567890123456",
+      "preco": 357.75
+    },
+    {
+      "nome": "Maciel Junio Leite da Silva",
+      "codigoDeBarras": "1234567891234",
+      "preco": 1250,
+      "id": 4
+    },
+    {
+      "nome": "Maciel Junio Leite da Silva",
+      "codigoDeBarras": "1234567891234",
+      "preco": 1250,
+      "id": 5
+    },
+    {
+      "nome": "Fogão",
+      "codigoDeBarras": "1111111111111",
+      "preco": 12673.5,
+      "id": 6
+    },
+    {
+      "nome": "Ar-condicionado",
+      "codigoDeBarras": "0156487965164",
+      "preco": 1250,
+      "id": 7
+    },
+    {
+      "nome": "mesa familia 6 cadeiras",
+      "codigoDeBarras": "0651465476510",
+      "preco": 1350.55,
+      "id": 8
+    },
+    {
+      "nome": "Maciel Junio Leite da Silva",
+      "codigoDeBarras": "1111111111111",
+      "preco": 1111111,
+      "id": 9
+    }
+  ]
 }
