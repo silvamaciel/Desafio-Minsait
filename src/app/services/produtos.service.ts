@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IProduto } from '../interface/produto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutosService {
+  getItemById(id: number): Observable<IProduto> {
+    return this.http.get<IProduto>(`${this.api}/${id}`);
+  }
   remover(id: number) {
     throw new Error('Method not implemented.');
   }
@@ -23,7 +27,11 @@ export class ProdutosService {
     return this.http.post(this.api, produto);
   }
   
-  excluir(id?: number) {
+  excluir(id: number) {
     return this.http.delete<IProduto>(`${this.api}/${id}`);
+  }
+
+  atualizar(produto: IProduto) {
+    return this.http.put(`${this.api}/${produto.id}`, produto);
   }
 }

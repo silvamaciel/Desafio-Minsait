@@ -48,4 +48,8 @@ export class ProdutosComponent {
       }
     })
   }
+
+  preencherForm(produto: IProduto) {
+    
+  }
 }

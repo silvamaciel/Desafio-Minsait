@@ -1,1 +1,22 @@
-<p>editar works!</p>
+<div>
+    <h2>Editar Produto</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" [(ngModel)]="produto.id" disabled>
+        </div>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" [(ngModel)]="produto.nome">
+        </div>
+        <div class="form-group">
+            <label for="codigoDeBarras">Código de Barras</label>
+            <input type="text" id="codigoDeBarras" name="codigoDeBarras" [(ngModel)]="produto.codigoDeBarras">
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" name="preco" [(ngModel)]="produto.preco">
+        </div>
+    </form>
+</div>
