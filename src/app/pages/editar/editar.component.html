@@ -1,36 +1,33 @@
 <div>
     <h2>Editar Produto</h2>
 
-    <form class="form-group container" (submit)="atualizarProduto()">
+    <form class="form-group container" [formGroup]="editarForm" (ngSubmit)="atualizarProduto()">
         <div class="row">
             <div class="col">
                 <div class="mb-3">
                     <label for="id" class="form-label">ID do Produto:</label>
-                    <input type="number" class="form-control" id="id" name="id" [(ngModel)]="produto.id" disabled>
+                    <input type="number" class="form-control bg-secondary p-2 text-white" id="id" name="id" formControlName="id" readonly>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome do Produto</label>
-                    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="produto.nome">
+                    <input type="text" class="form-control" id="nome" name="nome" formControlName="nome">
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
-                    <label for="codigoDeBarras" class="form-label">Código de Barras</label>
-                    <input type="text" class="form-control" id="codigoDeBarras" name="codigoDeBarras" maxlength="13"
-                        [(ngModel)]="produto.codigoDeBarras">
+                    <label for="codigoBarras" class="form-label">Código de Barras</label>
+                    <input type="text" class="form-control" id="codigoBarras" name="codigoBarras" formControlName="codigoBarras" maxlength="13">
                 </div>
             </div>
 
             <div class="col">
                 <div class="mb-3">
                     <label for="preco" class="form-label">R$ Valor</label>
-                    <input type="number" class="form-control" id="preco" step="0.01" name="preco" min="1" [(ngModel)]="produto.preco">
+                    <input type="number" class="form-control" id="preco" step="0.01" name="preco" formControlName="preco" min="1">
                 </div>
             </div>
-
-
         </div>
         <a class="btn btn-secondary me-1" routerLink="/produtos">Voltar</a>
         <button type="submit" class="btn btn-primary">Atualizar</button>

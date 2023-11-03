@@ -12,10 +12,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let produto of produtos">
+            <tr *ngFor="let produto of produtos | paginate: { itemsPerPage: 10, currentPage: page }">
                 <td scope="row">{{produto.id}}</td>
                 <td scope="row">{{produto.nome}}</td>
-                <td scope="row">{{produto.codigoDeBarras}}</td>
+                <td scope="row">{{produto.codigoBarras}}</td>
                 <td scope="row">{{produto.preco}}</td>
                 <td scope="row" class="d-block p-2">
                     <button type="button" class="btn btn-warning me-1 py-0" routerLink="../produtos/editar/{{produto.id}}">
@@ -28,4 +28,6 @@
             </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
     <button type="button" class="btn btn-primary" routerLink="/produtos/cadastro">Cadastrar</button>
+</div>

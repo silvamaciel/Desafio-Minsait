@@ -16,7 +16,7 @@ export class CadastrarComponent {
 
   cadastroForm = new FormGroup({
     nome: new FormControl('', [Validators.required]),
-    codigoDeBarras: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(13)]),
+    codigoBarras: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(13)]),
     preco: new FormControl(0,[Validators.required]),
   });
 

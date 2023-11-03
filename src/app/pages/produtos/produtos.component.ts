@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class ProdutosComponent {
 
   produtos: IProduto[] = [];
-
+  page = 1;
   constructor(private ProdutosService: ProdutosService) {}
 
   ngOnInit() {
@@ -34,8 +34,8 @@ export class ProdutosComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          'Feito!',
+          'Produto Excluído com sucesso!',
           'success'
         )
         {

@@ -11,6 +11,7 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

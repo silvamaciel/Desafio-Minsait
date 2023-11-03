@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduto } from 'src/app/interface/produto';
 import { ProdutosService } from 'src/app/services/produtos.service';
@@ -15,7 +16,7 @@ export class EditarComponent {
   produto: IProduto = {
     id: 0,
     nome: '',
-    codigoDeBarras: '',
+    codigoBarras: '',
     preco: 0,
   };
 
@@ -24,16 +25,23 @@ export class EditarComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const produtoId = +params['id'];
-      this.produtosService.getItemById(produtoId).subscribe((produto: IProduto) => {
-        this.produto = produto;
-      });
+      if (produtoId) {
+        this.produtosService.getItemById(produtoId).subscribe((produto: IProduto) => {
+          this.editarForm.setValue(produto);
+        });
+      }
     });
   }
 
+  editarForm = new FormGroup({
+    id: new FormControl(0, [Validators.required]),
+    nome: new FormControl('', [Validators.required]),
+    codigoBarras: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(13)]),
+    preco: new FormControl(0, [Validators.required])
+  });
+
   atualizarProduto() {
-    if (!this.produto.nome || this.produto.nome.trim() === '' ||
-      !this.produto.codigoDeBarras || this.produto.codigoDeBarras.length < 12 ||
-      this.produto.preco <= 0) {
+    if (this.editarForm.invalid) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -47,15 +55,16 @@ export class EditarComponent {
         denyButtonText: `Cancelar`,
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire('Salvo!', '', 'success')
-          this.produtosService.atualizar(this.produto).subscribe(() => {
+          Swal.fire('Salvo!', '', 'success');
+          const produtoAtualizado = this.editarForm.value as IProduto; // Coerção de tipo
+          this.produtosService.atualizar(produtoAtualizado).subscribe(() => {
             this.router.navigate(['/produtos']);
           });
         } else if (result.isDenied) {
-          Swal.fire('Produto não foi Alterado', '', 'info')
+          Swal.fire('Produto não foi Alterado', '', 'info');
         }
-      })
-      
+      });
     }
   }
+  
 }

@@ -15,7 +15,7 @@ export class ProdutosService {
   }
 
   // Link da API que será consumida
-  api = 'http://localhost:3000/produto';
+  api = 'http://localhost:8080/api/produtos';
 
   constructor(private http: HttpClient) {}
 
@@ -32,6 +32,6 @@ export class ProdutosService {
   }
 
   atualizar(produto: IProduto) {
-    return this.http.put(`${this.api}/${produto.id}`, produto);
+    return this.http.put(this.api, produto);
   }
 }

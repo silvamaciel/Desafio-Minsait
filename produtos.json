@@ -2,13 +2,13 @@
   "produto": [
     {
       "nome": "Geladeira",
-      "codigoDeBarras": "1657497513408",
+      "codigoBarras": "1657497513408",
       "preco": 3000,
       "id": 9
     },
     {
       "nome": "mesa familia 6 cadeiras",
-      "codigoDeBarras": "1234567891234",
+      "codigoBarras": "1234567891234",
       "preco": 1850,
       "id": 10
     }
